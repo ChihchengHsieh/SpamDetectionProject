@@ -9,7 +9,7 @@ Dataset:
   Number of Observations: 916,152
   Contain 82.3 % NonSpammer and 17.7% Spammer roughly. 
 
-### First Training whtouht any change
+## First Training whtouht any change
 
 ##### Training & Validation
 ![](https://github.com/ChihchengHsieh/SpamDetectionProject/blob/master/ModelLog/WithOutPunishment/All_Hist_SSCL.png?raw=true)
@@ -25,7 +25,7 @@ Dataset:
 
 
 
-### Training With the punishment on misclassifying the spammer (For Training With Unbalanced Data)
+## Training With the punishment on misclassifying the spammer (For Training With Unbalanced Data)
 In this model, if a spammer isn't detected, it will contribute to a larger loss.
 
 The punishment is implemented as the Scit-Learn "class_weight":
