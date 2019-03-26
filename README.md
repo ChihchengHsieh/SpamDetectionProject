@@ -1,5 +1,13 @@
 # SpamDetectionProject
-SpamDetectionProject
+
+TODO:
+Put Confusion Matrix
+
+
+
+Dataset:
+  Number of Observations: 916,152
+  Contain 82.3 % NonSpammer and 17.7% Spammer roughly. 
 
 ### First Training whtouht any change
 
