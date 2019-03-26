@@ -40,3 +40,7 @@ self.Loss = nn.BCEWithLogitsLoss(pos_weight=torch.tensor(numberOfNoSpammer/numbe
 
 #### Only Training 
 ![](https://github.com/ChihchengHsieh/SpamDetectionProject/blob/master/ModelLog/WithPunishmentOnSpammer/Train_Loss&Acc_Hist_SSCL.png?raw=true)
+
+#### DetailTrainingResult
+
+![](https://github.com/ChihchengHsieh/SpamDetectionProject/blob/master/EpochSix.png?raw=true)
