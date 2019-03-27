@@ -1,7 +1,8 @@
 # SpamDetectionProject
 
 TODO:
-Put Draw a Model Stucture
+
+Draw a Model Stucture
 
 Dataset:
   Number of Observations: 916,152
