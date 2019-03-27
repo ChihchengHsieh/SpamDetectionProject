@@ -1,9 +1,7 @@
 # SpamDetectionProject
 
 TODO:
-Put Confusion Matrix
-
-
+Put Draw a Model Stucture
 
 Dataset:
   Number of Observations: 916,152
