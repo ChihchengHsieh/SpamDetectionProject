@@ -8,6 +8,10 @@
 ## Dataset:
   Number of Observations: 916,152
   Contain 82.3 % NonSpammer and 17.7% Spammer roughly. 
+  
+
+# WEEK FOUR
+  
 
 ## First Training whtouht any change
 
@@ -63,6 +67,11 @@ self.Loss = nn.BCEWithLogitsLoss(pos_weight=pos_weight)
 ![](https://github.com/ChihchengHsieh/SpamDetectionProject/blob/master/ModelLog/WithPunishmentAndRatio1.4/All_Hist_SSCL.png?raw=true)
 
 ![](https://github.com/ChihchengHsieh/SpamDetectionProject/blob/master/ModelLog/WithPunishmentAndRatio1.4/Train_Loss%26Acc_Hist_SSCL.png?raw=true)
+
+
+
+
+# WEEK FIVE
 
 
 ## Using A Larger Neural Network with Punishment * Ratio (1.4)
