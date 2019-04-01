@@ -17,13 +17,6 @@ Dataset:
 
 ![](https://github.com/ChihchengHsieh/SpamDetectionProject/blob/master/ModelLog/WithOutPunishment/Train_Loss&Acc_Hist_SSCL.png?raw=true)
 
-
-
-
-
-
-
-
 ## Training With the punishment on misclassifying the spammer (For Training With Unbalanced Data)
 In this model, if a spammer isn't detected, it will contribute to a larger loss.
 
@@ -158,6 +151,16 @@ train_loader = DataLoader(training_dataset, batch_size=args.batch_size, shuffle=
 
 
 
+## Using The Large Model With WeightedRandomSampling (With Punishement*1 On Loss)
+
+#### Training Results
+![](https://github.com/ChihchengHsieh/SpamDetectionProject/blob/master/ModelLog/LargerModelUsingWeightedRandomSampliingAndNormalRatioAtSameTime/Train_Loss%26Acc_Hist_SSCL.png?raw=true)
+![](https://github.com/ChihchengHsieh/SpamDetectionProject/blob/master/ModelLog/LargerModelUsingWeightedRandomSampliingAndNormalRatioAtSameTime/All_Hist_SSCL.png?raw=true)
+
+#### Training Details
+![](https://github.com/ChihchengHsieh/SpamDetectionProject/blob/master/ModelLog/LargerModelUsingWeightedRandomSampliingAndNormalRatioAtSameTime/TrainingDetails.png?raw=true)
 
 
+#### Confusion Matrix
+![](https://github.com/ChihchengHsieh/SpamDetectionProject/blob/master/ModelLog/LargerModelUsingWeightedRandomSampliingAndNormalRatioAtSameTime/ConfusionMatrix.png?raw=true)
 
