@@ -108,7 +108,7 @@ self.out_net = nn.Sequential(
 
 ## Using The Large Model With WeightedRandomSampling (Without Punishement On Loss)
 
-#### HOW WE APPLY THE WeightRandomSampling:
+#### HOW WE APPLY THE WeightRandomSampling <Only Use on the training set>:
 
 ```python
 
