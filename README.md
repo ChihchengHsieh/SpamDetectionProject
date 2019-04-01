@@ -1,10 +1,11 @@
 # SpamDetectionProject
 
-TODO:
+## TODO List:
 
-Draw a Model Stucture
+- [ ] Try Another Architecture to see if the problem is on the DATASET <Transformer, PURE LSTM>
 
-Dataset:
+
+## Dataset:
   Number of Observations: 916,152
   Contain 82.3 % NonSpammer and 17.7% Spammer roughly. 
 
