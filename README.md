@@ -51,3 +51,113 @@ self.Loss = nn.BCEWithLogitsLoss(pos_weight=torch.tensor(numberOfNoSpammer/numbe
 #### DetailTrainingResult
 
 ![](https://github.com/ChihchengHsieh/SpamDetectionProject/blob/master/EpochSix.png?raw=true)
+
+
+
+
+## Training with the Punishment * Ratio (1.4)
+
+```python
+# It will punish the misclassification on Spammers harder
+pos_weight=torch.tensor(numberOfNoSpammer/numberOfSpammer) * 1.4
+self.Loss = nn.BCEWithLogitsLoss(pos_weight=pos_weight)
+
+```
+
+#### Training Result
+
+![](https://github.com/ChihchengHsieh/SpamDetectionProject/blob/master/ModelLog/WithPunishmentAndRatio1.4/All_Hist_SSCL.png?raw=true)
+
+![](https://github.com/ChihchengHsieh/SpamDetectionProject/blob/master/ModelLog/WithPunishmentAndRatio1.4/Train_Loss%26Acc_Hist_SSCL.png?raw=true)
+
+
+## Using A Larger Neural Network with Punishment * Ratio (1.4)
+
+#### The Model Architecture
+
+
+```python
+
+self.embed = nn.Embedding(
+    args.vocab_size, args.embedding_dim, Constants.PAD)
+
+self.cnn = nn.Sequential(
+    nn.Conv1d(args.embedding_dim, args.num_CNN_filter,
+              args.CNN_kernel_size, 1, 2),
+    nn.BatchNorm1d(args.num_CNN_filter),
+    nn.LeakyReLU(inplace=True),
+    nn.Conv1d(args.num_CNN_filter, args.num_CNN_filter*2,
+      args.CNN_kernel_size, 1, 2),
+    nn.BatchNorm1d(args.num_CNN_filter*2),
+    nn.LeakyReLU(inplace=True),
+    nn.Conv1d(args.num_CNN_filter*2, args.num_CNN_filter,
+      args.CNN_kernel_size, 1, 2),
+    nn.BatchNorm1d(args.num_CNN_filter),
+    nn.LeakyReLU(inplace=True),
+)
+
+self.rnn = nn.LSTM(args.num_CNN_filter, args.RNN_hidden,
+                   batch_first=True, dropout=args.LSTM_dropout, num_layers = 3)
+
+self.out_net = nn.Sequential(
+    nn.Linear(args.RNN_hidden, 1),
+)
+
+```
+#### Training Result
+
+![](https://github.com/ChihchengHsieh/SpamDetectionProject/blob/master/ModelLog/LargerModelWith1.4/All_Hist_SSCL.png?raw=true)
+
+![](https://github.com/ChihchengHsieh/SpamDetectionProject/blob/master/ModelLog/LargerModelWith1.4/Train_Loss%26Acc_Hist_SSCL.png?raw=true)
+
+
+
+
+## Using The Large Model With WeightedRandomSampling (Without Punishement On Loss)
+
+#### HOW WE APPLY THE WeightRandomSampling:
+
+```python
+
+def getSampler(dataset):
+    
+    target = torch.tensor([ label for t, l , label in dataset])
+    class_sample_count = torch.tensor(
+        [(target == t).sum() for t in torch.unique(target, sorted=True)])
+    weight = 1. / class_sample_count.float()
+    samples_weight = np.array([weight[t.item()] for t in target.byte()])
+    samples_weight = torch.from_numpy(samples_weight)
+    samples_weigth = samples_weight.double()
+    sampler = WeightedRandomSampler(samples_weight, len(samples_weight))
+    
+    return sampler
+    
+train_loader = DataLoader(training_dataset, batch_size=args.batch_size, shuffle=False, drop_last=False, sampler = sampler)
+
+```
+
+#### The WeightedRandomSampler from Pytorch
+
+![](https://github.com/ChihchengHsieh/SpamDetectionProject/blob/master/ModelLog/LargeModelWithWeightedRandomSampling/PytorchWeightedRandomSampler.png?raw=true)
+
+
+#### Training Results
+
+![](https://github.com/ChihchengHsieh/SpamDetectionProject/blob/master/ModelLog/LargeModelWithWeightedRandomSampling/Train_Loss%26Acc_Hist_SSCL.png?raw=true)
+
+![](https://github.com/ChihchengHsieh/SpamDetectionProject/blob/master/ModelLog/LargeModelWithWeightedRandomSampling/All_Hist_SSCL.png?raw=true)
+
+
+#### Training Details
+
+![](https://github.com/ChihchengHsieh/SpamDetectionProject/blob/master/ModelLog/LargeModelWithWeightedRandomSampling/WeightedRandomSampling.png)
+
+#### The Confusion Matrix on the validation set
+
+![](https://github.com/ChihchengHsieh/SpamDetectionProject/blob/master/ModelLog/LargeModelWithWeightedRandomSampling/ConfusionMatrix.png?raw=true)
+
+
+
+
+
+
