@@ -191,7 +191,11 @@ train_loader = DataLoader(training_dataset, batch_size=args.batch_size, shuffle=
 
 
 
+## Using Large Model, Voacab size = 10 but no RandomWeightedSampling
 
+![](https://github.com/ChihchengHsieh/SpamDetectionProject/blob/master/ModelLog/Vocab10LargeModel/Log/All_Hist_SSCL.png?raw=true)
+
+![](https://github.com/ChihchengHsieh/SpamDetectionProject/blob/master/ModelLog/Vocab10LargeModel/Log/Train_Loss%26Acc_Hist_SSCL.png?raw=true)
 
 
 
