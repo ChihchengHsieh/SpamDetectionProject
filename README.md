@@ -174,3 +174,27 @@ train_loader = DataLoader(training_dataset, batch_size=args.batch_size, shuffle=
 #### Confusion Matrix
 ![](https://github.com/ChihchengHsieh/SpamDetectionProject/blob/master/ModelLog/LargerModelUsingWeightedRandomSampliingAndNormalRatioAtSameTime/ConfusionMatrix.png?raw=true)
 
+
+
+## Using the Large Model, Small Vocab size(5) and RandomWeightedSampling
+
+
+#### Training Results
+
+![](https://github.com/ChihchengHsieh/SpamDetectionProject/blob/master/ModelLog/Vocab5RandomWeightedSamplingLargeModel/Log/All_Hist_SSCL.png?raw=true)
+
+
+#### Training Details
+
+![](https://github.com/ChihchengHsieh/SpamDetectionProject/blob/master/ModelLog/Vocab5RandomWeightedSamplingLargeModel/Log/Train_Loss%26Acc_Hist_SSCL.png?raw=true)
+
+
+
+
+
+
+
+
+
+
+
