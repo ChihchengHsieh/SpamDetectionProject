@@ -176,6 +176,12 @@ train_loader = DataLoader(training_dataset, batch_size=args.batch_size, shuffle=
 
 
 
+
+# Week SIX
+
+The cofusion matrix on following two models are not great, most of the time the model just map any input to nonSpammer output.
+
+
 ## Using the Large Model, Small Vocab size(5) and RandomWeightedSampling
 
 
