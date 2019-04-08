@@ -3,6 +3,12 @@
 ## TODO List:
 
 - [ ] Try Another Architecture to see if the problem is on the DATASET <Transformer, PURE LSTM>
+- [ ] Modularize the whole code
+
+Problem assumption:
+
+The LSTM Sequence is too long so the backprop will have gradient problem.
+
 
 
 ## Dataset:
@@ -215,5 +221,9 @@ The cofusion matrix on following two models are not great, most of the time the 
 
 
 
+## Same as the last model but with the clip_grad = 0.25
 
+![](https://github.com/ChihchengHsieh/SpamDetectionProject/blob/master/ModelLog/SmallModelVacabSize50WeightedRandomSamplingGradClip25/Log/All_Hist_SSCL.png?raw=true)
+
+![](https://github.com/ChihchengHsieh/SpamDetectionProject/blob/master/ModelLog/SmallModelVacabSize50WeightedRandomSamplingGradClip25/Log/Train_Loss%26Acc_Hist_SSCL.png?raw=true)
 
