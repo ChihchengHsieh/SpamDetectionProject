@@ -211,7 +211,7 @@ The cofusion matrix on following two models are not great, most of the time the 
 ## Using Small model (CNN*1, LSTM*1), Vocab size = 50, WeightedRandomSampling = True
 
 ![](https://github.com/ChihchengHsieh/SpamDetectionProject/blob/master/ModelLog/SmallModelVacabSize50WeightedRandomSampling/Log/All_Hist_SSCL.png?raw=true)
-![](https://github.com/ChihchengHsieh/SpamDetectionProject/blob/master/ModelLog/SmallModelVacabSize50WeightedRandomSampling/Log/All_Hist_SSCL.png?raw=true)
+![](https://github.com/ChihchengHsieh/SpamDetectionProject/blob/master/ModelLog/SmallModelVacabSize50WeightedRandomSampling/Log/Train_Loss%26Acc_Hist_SSCL.png?raw=true)
 
 
 
