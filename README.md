@@ -246,3 +246,7 @@ out = self.rnn(out)[0].sum(dim=1)
 ![](https://github.com/ChihchengHsieh/SpamDetectionProject/blob/master/SSCL_Vocab50_SmallModel_TakeSumOfLSTM/Log/All_HistSSCL_Vocab50_SmallModel_TakeSumOfLSTM.png?raw=true)
 ![](https://github.com/ChihchengHsieh/SpamDetectionProject/blob/master/SSCL_Vocab50_SmallModel_TakeSumOfLSTM/Log/Train_Loss%26Acc_HistSSCL_Vocab50_SmallModel_TakeSumOfLSTM.png?raw=true)
 
+## The last model with WeightedRandomSampling
+
+![](https://github.com/ChihchengHsieh/SpamDetectionProject/blob/master/SSCL_Vocab50_SmallModel_TakeSumOfLSTM_RandomWeightedSampling/Log/All_HistSSCL_Vocab50_SmallModel_TakeSumOfLSTM_RandomWeightedSampling.png?raw=true)
+![](https://github.com/ChihchengHsieh/SpamDetectionProject/blob/master/SSCL_Vocab50_SmallModel_TakeSumOfLSTM_RandomWeightedSampling/Log/Train_Loss%26Acc_HistSSCL_Vocab50_SmallModel_TakeSumOfLSTM_RandomWeightedSampling.png?raw=true)
