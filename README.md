@@ -1,5 +1,7 @@
 # SpamDetectionProject
 
+[[When Recurrent Model don't need to be Recurrent]](https://bair.berkeley.edu/blog/2018/08/06/recurrent/)
+
 ## TODO List:
 
 - [ ] Try Another Architecture to see if the problem is on the DATASET <Transformer, PURE LSTM>
