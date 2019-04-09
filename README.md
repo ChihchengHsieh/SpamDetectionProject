@@ -229,3 +229,16 @@ The cofusion matrix on following two models are not great, most of the time the 
 
 ![](https://github.com/ChihchengHsieh/SpamDetectionProject/blob/master/ModelLog/SmallModelVacabSize50WeightedRandomSamplingGradClip25/Log/Train_Loss%26Acc_Hist_SSCL.png?raw=true)
 
+## Vocab = 50, WeightedRandomSampling = False and Take sum of the LSTM output
+
+In this model we take the sum of LSTM output:
+
+Before we was setting the rnn in SSCL like this
+```python
+out = self.rnn(out)[0][:, -1, :]
+```
+now we take the sum
+
+```python
+out = self.rnn(out)[0].sum(dim=1)
+```
