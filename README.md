@@ -252,15 +252,91 @@ out = self.rnn(out)[0].sum(dim=1)
 ![](https://github.com/ChihchengHsieh/SpamDetectionProject/blob/master/SSCL_Vocab50_SmallModel_TakeSumOfLSTM_RandomWeightedSampling/Log/Train_Loss%26Acc_HistSSCL_Vocab50_SmallModel_TakeSumOfLSTM_RandomWeightedSampling.png?raw=true)
 
 
-## Try GatedCNN Model, vocab_size=50, WeightedRandomSampling
+## Try GatedCNN Model, vocab_size=50, WeightedRandomSampling, num_layer = 8
 
 ![](https://github.com/ChihchengHsieh/SpamDetectionProject/blob/master/GatedCNN8L_Vocab50_SmallModel_TakeSumOfLSTM_RandomWeightedSampling/Log/All_HistGatedCNN8L_Vocab50_SmallModel_TakeSumOfLSTM_RandomWeightedSampling.png?raw=true)
 
 ![](https://github.com/ChihchengHsieh/SpamDetectionProject/blob/master/GatedCNN8L_Vocab50_SmallModel_TakeSumOfLSTM_RandomWeightedSampling/Log/Train_Loss%26Acc_HistGatedCNN8L_Vocab50_SmallModel_TakeSumOfLSTM_RandomWeightedSampling.png?raw=true)
 
 
-## GatedCNN Model, vocab_size = 500, WieghtedRandomSampling
+## GatedCNN Model, vocab_size = 500, WieghtedRandomSampling, num_layer = 8
 
 ![](https://github.com/ChihchengHsieh/SpamDetectionProject/blob/master/GatedCNN8L_Vocab500_SmallModel_TakeSumOfLSTM_RandomWeightedSampling/Log/All_HistGatedCNN8L_Vocab500_SmallModel_TakeSumOfLSTM_RandomWeightedSampling.png?raw=true)
 
 ![](https://github.com/ChihchengHsieh/SpamDetectionProject/blob/master/GatedCNN8L_Vocab500_SmallModel_TakeSumOfLSTM_RandomWeightedSampling/Log/Train_Loss%26Acc_HistGatedCNN8L_Vocab500_SmallModel_TakeSumOfLSTM_RandomWeightedSampling.png?raw=true)
+
+
+## GatedCNN, 500Vocab, usingWeightRandomSampling, num_layer = 3
+
+```python
+class args(object):
+
+    # Data
+    
+    usingWeightRandomSampling = True
+    vocab_size = 500 # if we create the new vocab size, we have to do the new preprocess again
+    full_data = True
+    
+    if full_data: 
+        pickle_name = "FullPickleData"+ str(vocab_size) + "Vocab.txt"
+        pickle_name_beforeMapToIdx = "FullPickleDatabeforeMapToIdx"+ str(vocab_size) + "Vocab.txt"
+    else:
+        pickle_name = "10thPickleData"+ str(vocab_size) + "Vocab.txt"
+        pickle_name_beforeMapToIdx = "10thPickleDatabeforeMapToIdx"+ str(vocab_size) + "Vocab.txt"
+    dataset_path = ""  # load a dataset and setting
+
+    ##### Arch
+        
+    usingPretrainedEmbedding = False
+    if usingPretrainedEmbedding:
+        embedding_dim = 300
+    else:
+        embedding_dim = 512
+
+    ## GatedCNN arch
+
+    GatedCNN_embedingDim = 128
+    GatedCNN_convDim = 64
+    GatedCNN_kernel = 3
+    GatedCNN_stride = 1
+    GatedCNN_pad = 1
+    GatedCNN_layers = 3
+        
+    ## SSCL arch
+
+    RNN_hidden = 256
+    num_CNN_filter = 256
+    CNN_kernel_size = 5
+    LSTM_dropout = 0.1
+    num_LSTM_layers = 1
+
+    # Training params
+
+    confusion_matrics = []
+    
+    batch_size = 64
+    L2 = 0.1
+    threshold = 0.75
+    lr = 0.002
+    n_epoch = 50
+
+    # If using Adam
+    adam_beta1 = 0.9
+    adam_beta2 = 0.999
+    adam_weight_decay = 0.01
+
+    # Logging the Training
+    val_freq = 50
+    val_steps = 3
+    log_freq = 10
+    model_save_freq = 1
+    model_name = 'GatedCNN8L_Vocab500_Layer3_RandomWeightedSampling'
+    model_path = './' + model_name + '/Model/'
+    log_path = './' + model_name + '/Log/'
+
+
+```
+
+![](https://github.com/ChihchengHsieh/SpamDetectionProject/blob/master/GatedCNN8L_Vocab500_Layer3_RandomWeightedSampling/Log/All_Hist_GatedCNN8L_Vocab500_Layer3_RandomWeightedSampling.png?raw=true)
+
+![](https://github.com/ChihchengHsieh/SpamDetectionProject/blob/master/GatedCNN8L_Vocab500_Layer3_RandomWeightedSampling/Log/Train_Loss%26Acc_Hist_GatedCNN8L_Vocab500_Layer3_RandomWeightedSampling.png?raw=true)
