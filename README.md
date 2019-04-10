@@ -257,3 +257,10 @@ out = self.rnn(out)[0].sum(dim=1)
 ![](https://github.com/ChihchengHsieh/SpamDetectionProject/blob/master/GatedCNN8L_Vocab50_SmallModel_TakeSumOfLSTM_RandomWeightedSampling/Log/All_HistGatedCNN8L_Vocab50_SmallModel_TakeSumOfLSTM_RandomWeightedSampling.png?raw=true)
 
 ![](https://github.com/ChihchengHsieh/SpamDetectionProject/blob/master/GatedCNN8L_Vocab50_SmallModel_TakeSumOfLSTM_RandomWeightedSampling/Log/Train_Loss%26Acc_HistGatedCNN8L_Vocab50_SmallModel_TakeSumOfLSTM_RandomWeightedSampling.png?raw=true)
+
+
+## GatedCNN Model, vocab_size = 500, WieghtedRandomSampling
+
+![](https://github.com/ChihchengHsieh/SpamDetectionProject/blob/master/GatedCNN8L_Vocab500_SmallModel_TakeSumOfLSTM_RandomWeightedSampling/Log/All_HistGatedCNN8L_Vocab500_SmallModel_TakeSumOfLSTM_RandomWeightedSampling.png?raw=true)
+
+![](https://github.com/ChihchengHsieh/SpamDetectionProject/blob/master/GatedCNN8L_Vocab500_SmallModel_TakeSumOfLSTM_RandomWeightedSampling/Log/Train_Loss%26Acc_HistGatedCNN8L_Vocab500_SmallModel_TakeSumOfLSTM_RandomWeightedSampling.png?raw=true)
